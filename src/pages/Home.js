@@ -18,7 +18,7 @@ const Home = () => {
       navigate("/login")
     } else {
      axios
-      .get("http://localhost:3001/posts", {
+      .get("https://fullstack-pedro.herokuapp.com/posts", {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
@@ -33,7 +33,7 @@ const Home = () => {
 
   const likeAPost = (postId) => {
     axios.post(
-      "http://localhost:3001/likes",
+      "https://fullstack-pedro.herokuapp.com/likes",
        { PostId: postId },
        { headers: { accessToken: localStorage.getItem("accessToken") } }
     ).then((response) => {
